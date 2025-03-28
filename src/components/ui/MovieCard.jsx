@@ -1,18 +1,17 @@
 import { Heart, Play, Star } from 'lucide-react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useMoviesFavorites } from '../../hooks/useMoviesFavorites'
 import Button from '../shared/Button'
 
 const MovieCard = ({movie}) => {
     const URL_IMAGE = import.meta.env.VITE_URL_IMAGE
-    const { addToFavorites } = useMoviesFavorites()
+    const { addToFavorites } = useMoviesFavorites();
+
+
 
     return (
-        <div 
-            className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden 
-            transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl
-            w-full max-w-[280px] mx-auto flex flex-col"
-        >
+        <div className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl w-full max-w-[280px] mx-auto flex flex-col">
+            
             {/* Contenedor de imagen con proporción fija */}
             <div className="relative overflow-hidden w-full pt-[150%]">
                 <img

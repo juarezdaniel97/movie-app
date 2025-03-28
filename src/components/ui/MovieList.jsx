@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Loader2, Film } from 'lucide-react'
 import MovieCard from '../ui/MovieCard'
 import { useMovieContext } from '../../contexts/MoviesContext'
-import { useMoviesFavorites } from '../../hooks/useMoviesFavorites'
 
 
 const MovieList = () => {
@@ -30,7 +29,6 @@ const MovieList = () => {
         )
     }
 
-    
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {movies.map((movie) => (
