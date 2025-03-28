@@ -6,7 +6,7 @@ import { useMovieContext } from '../../contexts/MoviesContext'
 
 const MovieList = () => {
     
-    const { movies, movie, loading, fetchMovies } = useMovieContext()
+    const { movies, loading, fetchMovies } = useMovieContext()
     
     useEffect(() => {
         fetchMovies()
@@ -29,17 +29,6 @@ const MovieList = () => {
         )
     }
     return (
-        // <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        //     {
-        //         // loading ? <p>Cargando...</p> :  />
-        //     }
-
-        //     {
-        //         movies.map((movie)=>(
-        //             <MovieCard key={movie.id} movie={movie}/>
-        //         ))
-        //     }
-        // </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {movies.map((movie) => (
                 <MovieCard key={movie.id} movie={movie}/>
