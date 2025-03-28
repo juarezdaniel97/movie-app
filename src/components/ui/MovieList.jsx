@@ -2,14 +2,16 @@ import React, { useEffect } from 'react'
 import { Loader2, Film } from 'lucide-react'
 import MovieCard from '../ui/MovieCard'
 import { useMovieContext } from '../../contexts/MoviesContext'
+import { useMoviesFavorites } from '../../hooks/useMoviesFavorites'
 
 
 const MovieList = () => {
     
     const { movies, loading, fetchMovies } = useMovieContext()
-    
+
     useEffect(() => {
-        fetchMovies()
+        fetchMovies();
+
     }, [fetchMovies])
     
     if (loading) {
