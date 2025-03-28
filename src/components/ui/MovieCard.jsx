@@ -1,15 +1,23 @@
 import { Heart, Play, Star } from 'lucide-react'
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../shared/Button'
 import { useFavoriteListContext } from '../../contexts/FavoritesContext';
+import TrailerModal from './TrailerModal';
 
 const MovieCard = ({movie}) => {
     const URL_IMAGE = import.meta.env.VITE_URL_IMAGE
     const { addToFavorites } = useFavoriteListContext();
 
+    // Estado para controlar la visibilidad del modal de tráiler
+    const [showTrailer, setShowTrailer] = useState(false);
     
+    // Función para abrir/cerrar el modal de tráiler
+    const toggleTrailer = () => {
+        setShowTrailer(!showTrailer);
+    };
 
     return (
+        <>
         <div className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl w-full max-w-[280px] mx-auto flex flex-col">
             
             {/* Contenedor de imagen con proporción fija */}
@@ -36,9 +44,9 @@ const MovieCard = ({movie}) => {
                 {/* Botones */}
                 <div className="flex items-center gap-2 w-full mt-auto">
                     <button 
-                        className="flex-1 flex items-center justify-center gap-2 bg-blue-500 text-white px-4 py-2 
-                        rounded-lg font-semibold cursor-pointer
+                        className="flex-1 flex items-center justify-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold cursor-pointer
                         hover:bg-blue-600"
+                        onClick={toggleTrailer}
                     >
                         <Play className="w-5 h-5" /> 
                         Tráiler
@@ -48,11 +56,20 @@ const MovieCard = ({movie}) => {
                         style={'bg-red-500 text-white p-2 rounded-lg hover:bg-red-600 cursor-pointer focus:ring-2 focus:ring-red-400 group'}
                         action={addToFavorites}
                         param={movie}
-                        name={<Heart className="w-5 h-5 group-hover:fill-white" /> }
+                        name={<Heart className="w-5 h-5 group-hover:fill-white" />}
                     />
                 </div>
             </div>
         </div>
+        
+        {/* Modal de trailer */}
+        {showTrailer && (
+            <TrailerModal 
+                movieId={movie.id} 
+                setIsOpen={toggleTrailer} 
+            />
+        )}
+    </>
     )
 }
 
