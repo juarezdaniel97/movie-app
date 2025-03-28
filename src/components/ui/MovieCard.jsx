@@ -1,13 +1,13 @@
 import { Heart, Play, Star } from 'lucide-react'
-import React, { useEffect } from 'react'
-import { useMoviesFavorites } from '../../hooks/useMoviesFavorites'
+import React from 'react'
 import Button from '../shared/Button'
+import { useFavoriteListContext } from '../../contexts/FavoritesContext';
 
 const MovieCard = ({movie}) => {
     const URL_IMAGE = import.meta.env.VITE_URL_IMAGE
-    const { addToFavorites } = useMoviesFavorites();
+    const { addToFavorites } = useFavoriteListContext();
 
-
+    
 
     return (
         <div className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl w-full max-w-[280px] mx-auto flex flex-col">
@@ -31,7 +31,6 @@ const MovieCard = ({movie}) => {
             <div className="p-4 flex flex-col flex-grow">
                 <h2 className="text-lg font-bold text-white mb-2 line-clamp-1">{movie.title}</h2>
                 
-                {/* Descripción corta */}
                 <p className="text-gray-400 text-sm mb-4 line-clamp-2 flex-grow">{movie.overview}</p>
                 
                 {/* Botones */}
@@ -45,7 +44,6 @@ const MovieCard = ({movie}) => {
                         Tráiler
                     </button>
     
-
                     <Button
                         style={'bg-red-500 text-white p-2 rounded-lg hover:bg-red-600 cursor-pointer focus:ring-2 focus:ring-red-400 group'}
                         action={addToFavorites}
