@@ -25,13 +25,13 @@ const Header2 = () => {
                 </nav>
 
                 <div className="flex items-center space-x-4">
-                    <button
-                        className="bg-white text-green-800 px-4 py-2 rounded-lg hover:bg-green-100 transition-colors flex items-center space-x-2"
-                        onClick={() => setIsOpen(true)}
-                    >
-                        <Heart className="w-5 h-5" />
-                        <span>Favorites</span>
-                    </button>
+                    <Button
+                        style={'bg-white text-green-800 px-4 py-2 rounded-lg cursor-pointer hover:bg-green-100 flex items-center space-x-2'}
+                        action={setIsOpen}
+                        name={
+                        <><Heart className="w-5 h-5" />
+                        <span>Favorites</span></>}
+                    />
                 </div>
             </header>
 
