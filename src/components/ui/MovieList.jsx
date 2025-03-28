@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Loader2, Film } from 'lucide-react'
 import MovieCard from '../ui/MovieCard'
 import { useMovieContext } from '../../contexts/MoviesContext'
@@ -7,12 +7,11 @@ import { useMoviesFavorites } from '../../hooks/useMoviesFavorites'
 
 const MovieList = () => {
     
-    const { movies, loading, fetchMovies } = useMovieContext()
+    const { movies, loading, fetchMovies } = useMovieContext();
 
     useEffect(() => {
-        fetchMovies();
-
-    }, [fetchMovies])
+        fetchMovies()
+    }, [])
     
     if (loading) {
         return (
@@ -30,6 +29,8 @@ const MovieList = () => {
             </div>
         )
     }
+
+    
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {movies.map((movie) => (

@@ -10,7 +10,7 @@ function App() {
     <>
       <div>
             <Home/>
-            <ToastContainer/>
+            <ToastContainer position="bottom-right"/>
       </div>
     </>
   )

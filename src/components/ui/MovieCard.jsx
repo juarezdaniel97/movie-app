@@ -1,6 +1,7 @@
 import { Heart, Play, Star } from 'lucide-react'
 import React from 'react'
 import { useMoviesFavorites } from '../../hooks/useMoviesFavorites'
+import Button from '../shared/Button'
 
 const MovieCard = ({movie}) => {
     const URL_IMAGE = import.meta.env.VITE_URL_IMAGE
@@ -37,8 +38,7 @@ const MovieCard = ({movie}) => {
                 {/* Botones */}
                 <div className="flex items-center gap-2 w-full mt-auto">
                     <button 
-                        className="flex-1 flex items-center justify-center gap-2 
-                        bg-blue-500 text-white px-4 py-2 
+                        className="flex-1 flex items-center justify-center gap-2 bg-blue-500 text-white px-4 py-2 
                         rounded-lg font-semibold cursor-pointer
                         hover:bg-blue-600"
                     >
@@ -46,14 +46,13 @@ const MovieCard = ({movie}) => {
                         Tráiler
                     </button>
     
-                    <button
-                        onClick={() => addToFavorites(movie)}
-                        className="bg-red-500 text-white p-2 rounded-lg 
-                        hover:bg-red-600 cursor-pointer
-                        focus:outline-none focus:ring-2 focus:ring-red-400 group"
-                    >
-                        <Heart className="w-5 h-5 group-hover:fill-white" /> 
-                    </button>
+
+                    <Button
+                        style={'bg-red-500 text-white p-2 rounded-lg hover:bg-red-600 cursor-pointer focus:ring-2 focus:ring-red-400 group'}
+                        action={addToFavorites}
+                        param={movie}
+                        name={<Heart className="w-5 h-5 group-hover:fill-white" /> }
+                    />
                 </div>
             </div>
         </div>

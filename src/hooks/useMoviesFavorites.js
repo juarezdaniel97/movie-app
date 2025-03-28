@@ -11,7 +11,7 @@ export const useMoviesFavorites = () => {
     useEffect(() => {
         localStorage.setItem('movies', JSON.stringify(moviesFavorites));
 
-    }, [moviesFavorites])
+    }, [moviesFavorites, setMoviesFavorites])
 
     const addToFavorites = (movie) => {
         // Verificar si la película ya está en favoritos

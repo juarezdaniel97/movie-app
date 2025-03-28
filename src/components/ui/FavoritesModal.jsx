@@ -8,6 +8,7 @@ const FavoritesModal = ({setIsOpen}) => {
 
     const URL_IMAGE = import.meta.env.VITE_URL_IMAGE
     
+    console.log('moviesFavorites-->', moviesFavorites);
     
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-600 opacity-90 shadow-md">
