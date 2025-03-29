@@ -16,6 +16,13 @@ const Header2 = () => {
                 
                 {/* Logo y Menú Móvil */}
                 <div className="flex items-center space-x-4">
+
+                    <Button
+                        style={'text-white w-8 h-8 md:hidden focus:outline-none transition-transform duration-300 transform hover:scale-110'}
+                        action={setMenuOpen}
+                        name={menuOpen ? <X /> : <Menu />}
+                    />
+
                     <div className="flex items-center space-x-2">
                         <img src="/cine-radar.webp" alt="Cine Radar" className="h-10 md:h-12 rounded-lg shadow-lg"/>
                         <span className="text-xl md:text-2xl font-bold text-white tracking-wide">
