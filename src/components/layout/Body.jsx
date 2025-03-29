@@ -2,6 +2,7 @@ import React from 'react'
 import MovieList from '../ui/MovieList'
 import Presentacion from '../ui/Presentacion'
 import SearchBar from '../shared/SearchBar'
+import MovieCategory from '../ui/MovieCategory'
 
 const Body = () => {
     return (
@@ -15,7 +16,12 @@ const Body = () => {
 
                     <SearchBar/>
                     
-                    <MovieList/>
+                    {/* <MovieList/> */}
+                    <div className="mt-8">
+                        <MovieCategory title="Películas Populares" category="popular" />
+                        <MovieCategory title="Mejor Calificadas" category="topRated" />
+                        <MovieCategory title="Próximos Estrenos" category="upcoming" />
+                    </div>
                 </div>
             </div>
         </>
