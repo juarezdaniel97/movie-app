@@ -1,10 +1,13 @@
-import { useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ChevronRight } from 'lucide-react';
 import MovieCard from './MovieCard';
 import { useMovieContext } from '../../contexts/MoviesContext'
 
 const MovieCategory = ({ title, category, showAll = false }) => {
+    
     const { movies, loading, fetchMoviesByCategory } = useMovieContext();
+
+    const [itemsToShow, setItemsToShow] = useState(5);
 
 
     useEffect(() => {
@@ -27,14 +30,36 @@ const MovieCategory = ({ title, category, showAll = false }) => {
         );
     }
 
-    // Si showAll es false, mostramos solo 5 películas
-    const moviesToShow = showAll ? movies[category] : movies[category].slice(0, 10);
+    // Si showAll es false, mostramos la cantidad seleccionada por el usuario
+    const moviesToShow = showAll ? movies[category] : movies[category].slice(0, itemsToShow);
 
     return (
         <div className="mb-12">
 
-            <h2 className="text-2xl font-bold text-gray-800 mt-4 mb-4">{title}</h2>
-        
+
+            <div className="flex items-center gap-3">
+                <h2 className="text-2xl font-bold text-gray-800 mt-4 mb-4">{title}</h2>
+
+                <label htmlFor={`show-count-${category}`} className="text-sm text-gray-600">
+                    Mostrar:
+                </label>
+
+                <select
+                    id={`show-count-${category}`}
+                    value={itemsToShow}
+                    onChange={(e) => setItemsToShow(Number(e.target.value))}
+                    className="border border-gray-300 rounded px-2 py-1 text-sm"
+                >
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    {
+                        !showAll && movies[category].length > 20 && (<option value={movies[category].length}>Todas</option>)
+                    }
+                </select> 
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 {
                     moviesToShow.map((movie) => ( <MovieCard key={movie.id} movie={movie} />))

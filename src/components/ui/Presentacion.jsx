@@ -35,7 +35,7 @@ const Presentacion = () => {
                     </h1>
                     
                     <p className="text-base md:text-xl text-gray-600 mb-8 md:mb-10 leading-relaxed px-4">
-                        MovieApp te permite explorar un universo de películas, guardar tus favoritas y 
+                        <span> <strong> Cine Radar </strong> </span> te permite explorar un universo de películas, guardar tus favoritas y 
                         mantenerte actualizado con los últimos estrenos de una manera sencilla e intuitiva.
                     </p>
                     
