@@ -121,5 +121,5 @@ Puedes probar la aplicación aquí:
 [🔗 Cine Radar App - Demo](https://cine-radar.netlify.app/) 
 ---
 ## 📜 Desarrollado
-Este proyecto está desarroLlado para la`DIPLOMATURA FULL STACK` EN `JAVA SCRIPTS` por `DANIEL JUAREZ`.
+Este proyecto está desarroLlado para la` Diplomatura Fullstack` en `JavaScript` por `DANIEL JUAREZ`.
 
