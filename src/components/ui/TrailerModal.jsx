@@ -14,7 +14,7 @@ const TrailerModal = ({ movieId, setIsOpen }) => {
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-50">
-            <div className="bg-gray-900 p-4 rounded-lg shadow-lg w-full max-w-3xl relative">
+            <div className="bg-green-900 p-4 rounded-lg shadow-lg w-full max-w-3xl relative">
                 {/* Botón Cerrar */}
                 <Button
                     style={'absolute top-2 right-2 text-white z-10 hover:text-gray-300 cursor-pointer'}

@@ -5,12 +5,12 @@ import { useMovieContext } from '../../contexts/MoviesContext';
 
 
 const SearchBar = () => {
-    const { fetchMovies } = useMovieContext();
+    const { searchMovies } = useMovieContext();
     const [query, setQuery] = useState('');
 
     const handleSearch = (e) => {
         e.preventDefault()
-        fetchMovies(query)
+        searchMovies(query)
         setQuery("")
     }
 
