@@ -1,10 +1,7 @@
-import React from 'react'
-import { PlayCircle, Heart, Search } from 'lucide-react'
-import Button from '../shared/Button';
-
+import React from 'react';
+import { PlayCircle, Heart, Search } from 'lucide-react';
 
 const Presentacion = () => {
-
     const FEATURES_ICON = [
         {
             icon: Search,
@@ -27,46 +24,55 @@ const Presentacion = () => {
     ];
 
     return (
-        <div className="bg-green-50 py-12 md:py-16">
-            <div className="container mx-auto px-4">
+        <div className="bg-gradient-to-b from-green-50 to-white py-16 md:py-20">
+            <div className="container mx-auto px-6">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-800 mb-4 md:mb-6">
-                        Descubre, Guarda y Disfruta tus Películas
+                    <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
+                        Explora, Colecciona y Vive el Cine
                     </h1>
-                    
-                    <p className="text-base md:text-xl text-gray-600 mb-8 md:mb-10 leading-relaxed px-4">
+
+                    <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
                         MovieApp te permite explorar un universo de películas, guardar tus favoritas y 
                         mantenerte actualizado con los últimos estrenos de una manera sencilla e intuitiva.
                     </p>
                     
-                    <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6 mb-8 md:mb-12">
+                    <div className="flex flex-col md:flex-row justify-center gap-6 mb-12">
                         {FEATURES_ICON.map((feature, index) => (
-                            <div key={index} className="bg-white p-6 rounded-xl shadow-md w-full md:w-1/3">
-                                <feature.icon className={`w-10 h-10 ${feature.color} mx-auto mb-4`} />
-                                <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2">
+                            <div 
+                                key={index} 
+                                className="bg-white p-6 rounded-xl shadow-md w-full md:w-1/3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                            >
+                                <feature.icon className={`w-12 h-12 ${feature.color} mx-auto mb-4 animate-pulse`} />
+                                <h3 className="text-xl font-semibold text-gray-900 mb-2">
                                     {feature.title}
                                 </h3>
-                                <p className="text-sm md:text-base text-gray-600">
+                                <p className="text-gray-600 text-base">
                                     {feature.description}
                                 </p>
                             </div>
                         ))}
                     </div>
                     
-                    <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 px-4">
-                        <a href="#Movies" className='bg-green-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg hover:bg-green-700 font-semibold w-full sm:w-auto'>
+                    <div className="flex flex-col sm:flex-row justify-center gap-4">
+                        <a 
+                            href="#Movies" 
+                            className="bg-green-600 text-white px-8 py-3 rounded-lg shadow-md hover:bg-green-700 
+                            transition-all duration-300 font-semibold w-full sm:w-auto text-center"
+                        >
                             Comenzar a Explorar
                         </a>
 
-                        <button className="bg-white text-green-600 px-6 md:px-8 py-2 md:py-3 rounded-lg 
-                        border border-green-600 hover:bg-green-50 transition-colors font-semibold w-full sm:w-auto">
+                        <button 
+                            className="bg-white text-green-600 px-8 py-3 rounded-lg border border-green-600 
+                            hover:bg-green-50 transition-all duration-300 shadow-md font-semibold w-full sm:w-auto text-center"
+                        >
                             Más Información
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Presentacion
+export default Presentacion;

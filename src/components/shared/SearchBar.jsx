@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { Search } from 'lucide-react'
 import { useMovieContext } from '../../contexts/MoviesContext';
+import MovieCard from '../ui/MovieCard';
 
 
 
 const SearchBar = () => {
-    const { searchMovies } = useMovieContext();
+    const { searchMovies, movies } = useMovieContext();
     const [query, setQuery] = useState('');
 
     const handleSearch = (e) => {
@@ -29,6 +30,14 @@ const SearchBar = () => {
                     <Search className="w-5 h-5" />
                 </button>
             </form>
+
+            {/* <div  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                { 
+                    movies && (movies.map((movie)=>(
+                        <MovieCard key={movie.id} movie={movie} />
+                    )))
+                }
+            </div> */}
         </div>
     )
 }
