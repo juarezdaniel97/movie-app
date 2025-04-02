@@ -112,7 +112,7 @@ npm run dev
 ---
 
 ## 🎥 Capturas de Pantalla (Opcional)
-_![alt text](image.png)
+_![Presentación](image.png)
 
 ---
 
@@ -126,6 +126,6 @@ _![alt text](image.png)
 
 ---
 
-## 📜 Licencia
-Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más información.
+## 📜 Desarrollado
+Este proyecto está desarroLlado para la`DIPLOMATURA FULL STACK` EN `JAVA SCRIPTS` por `DANIEL JUAREZ`.
 
