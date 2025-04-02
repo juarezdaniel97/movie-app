@@ -18,14 +18,15 @@ const Header = () => {
             {/* Logo y Menú Móvil */}
             <div className="flex items-center space-x-4">
 
-                <Button
-                    style={'text-white w-8 h-8 md:hidden focus:outline-none transition-transform duration-300 transform hover:scale-110'}
-                    action={setMenuOpen}
-                    name={menuOpen ? <X /> : <Menu />}
-                />
+            <Button
+                style={'text-white w-12 h-12 md:hidden flex items-center justify-center rounded-lg focus:outline-none transition-transform duration-300 transform hover:scale-110'}
+                action={setMenuOpen}
+                name={menuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            />
 
                 <div className="flex items-center space-x-2">
-                    <img src="/cine-radar.webp" alt="Cine Radar" className="h-10 md:h-12 rounded-lg shadow-lg"/>
+                    {/* <img src="/cine-radar.webp" alt="Cine Radar" className="h-10 md:h-12 rounded-lg shadow-lg"/> */}
+                    <img src="/cine-radar.webp" alt="Cine Radar" className="h-12 w-auto rounded-lg shadow-lg" />
                     <span className="text-xl md:text-2xl font-bold text-white tracking-wide">
                         Cine Radar
                     </span>
@@ -48,12 +49,16 @@ const Header = () => {
             {/* Botón de Favoritos */}
             <div className="flex items-center space-x-4">
                 <Button
-                        style={'bg-white text-green-800 px-4 py-2 rounded-lg cursor-pointer hover:bg-green-100 flex items-center space-x-2'}
-                        action={setIsOpen}
-                        name={
-                        <><Heart className="w-5 h-5" />
-                        <span>Favoritos</span></>}
-                    />
+                    style={'bg-white text-green-800 px-5 py-2 rounded-lg cursor-pointer hover:bg-green-100 flex items-center space-x-2 shadow-md'}
+                    action={setIsOpen}
+                    name={
+                        <>
+                            <Heart className="w-6 h-6" />
+                            <span className="text-sm md:text-base font-medium">Favoritos</span>
+                        </>
+                    }
+/>
+
             </div>
         </header>
 
