@@ -1,6 +1,6 @@
-# 🎬 TMDB Movies App
+# 🎬 Cine Radar App
 
-TMDB Movies App es una aplicación web que consume la API de TMDB para mostrar películas populares, mejor valoradas y próximos estrenos. Los usuarios pueden explorar, buscar películas, añadirlas a favoritos y ver detalles y tráilers.
+Cine Radar App es una aplicación web que consume la API de TMDB para mostrar películas populares, mejor valoradas y próximos estrenos. Los usuarios pueden explorar, buscar películas, añadirlas a favoritos y ver detalles y tráilers.
 
 ---
 
@@ -112,20 +112,14 @@ npm run dev
 ---
 
 ## 🎥 Capturas de Pantalla (Opcional)
-_![Presentación](image.png)
+Presentación![Presentación](image.png)
 
 ---
 
-## 🤝 Contribuciones
-¡Las contribuciones son bienvenidas! Si deseas colaborar, por favor sigue estos pasos:
-1. Haz un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b feature-nueva-funcionalidad`).
-3. Realiza los cambios y haz commit (`git commit -m 'Añadir nueva funcionalidad'`).
-4. Sube los cambios a tu fork (`git push origin feature-nueva-funcionalidad`).
-5. Abre un Pull Request.
-
+## 🚀 Demo  
+Puedes probar la aplicación aquí:  
+[🔗 Cine Radar App - Demo](https://cine-radar.netlify.app/) 
 ---
-
 ## 📜 Desarrollado
 Este proyecto está desarroLlado para la`DIPLOMATURA FULL STACK` EN `JAVA SCRIPTS` por `DANIEL JUAREZ`.
 
