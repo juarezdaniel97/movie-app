@@ -18,7 +18,7 @@ Cine Radar App es una aplicación web que consume la API de TMDB para mostrar pe
 ## 📂 Estructura del Proyecto
 
 ```
-📦 TMDB Movies App
+📦 Movies App
 ├── 📁 src
 │   ├── 📁 assets
 │   ├── 📁 components
@@ -56,7 +56,7 @@ Cine Radar App es una aplicación web que consume la API de TMDB para mostrar pe
 
 ## ✨ Características
 
-✅ Visualización de películas por categorías: **Popular, Top Rated, Upcoming**
+**✅ Visualización de películas por categorías:** `Popular, Top Rated, Upcoming`
 ✅ Búsqueda de películas por título
 ✅ Sistema de favoritos para guardar películas
 ✅ Reproducción de tráilers
